@@ -1,0 +1,16 @@
+{% extends 'myauth/base.html' %}
+
+
+{% block title %}
+    Registr
+{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+    <form method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+    <button><a href="{% url 'myauth:users' %}">To users list</a></button>
+{% endblock %}

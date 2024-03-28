@@ -1,0 +1,6 @@
+2024-03-15 04:00:48,434 [INFO] shopapp.views: Rendering shop index
+2024-03-15 04:00:48,761 [INFO] shopapp.views: Rendering shop index
+2024-03-15 04:03:40,562 [INFO] django.utils.autoreload: /home/tahir/PycharmProjects/python_django_translate/mysite/settings.py changed, reloading.
+2024-03-15 04:03:40,860 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-03-15 08:17:40,990 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-03-15 08:17:56,956 [WARNING] django.request: Not Found: /

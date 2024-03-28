@@ -1,0 +1,52 @@
+{% extends 'myauth/base.html' %}
+{% load cache %}
+
+
+{% block title %}
+    About me
+{% endblock %}
+
+{% block body %}
+    <h1>User info</h1>
+    {% if user.is_authenticated %}
+        {% cache 300 userinfo user.username %}
+            <h2>Detail</h2>
+            {% if user.profile.avatar %}
+                <img src="{{ user.profile.avatar.url }}" alt="{{ user.profile.avatar.name }}">
+            {% else %}
+                <p>no avatar downloaded yet</p>
+
+
+            <div>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">
+                        update profile
+                    </button>
+                </form>
+            </div>
+
+
+            {% endif %}
+            <p>Username: {{ user.username }}</p>
+            <p>First name: {{ user.first_name }}</p>
+            <p>Last name: {{ user.last_name }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Bio: {{ user.profile.bio }}</p>
+            <br>
+            <div>
+                <button><a href="{% url 'shopapp:products_list' %}">To products</a></button>
+            </div>
+            <div>
+                <button><a href="{% url 'shopapp:orders_list' %}">To orders</a></button>
+            </div>
+            <br>
+            <div>
+                <button><a href="{% url 'myauth:logout' %}">Logout</a></button>
+            </div>
+        {% endcache %}
+    {% else %}
+        <h2>User is anonymous</h2>
+    {% endif %}
+{% endblock %}

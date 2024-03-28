@@ -1,0 +1,106 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "Big",
+      "description": "Shrek sparked a motion picture phenomenon and captured the world's imagination with...the Greatest Fairy Tale Never Told! Shrek (Mike Myers) goes on a quest to rescue the feisty Princess Fiona (Cameron Diaz) with the help of his loveable Donkey (Eddie Murphy) and win back the deed to his swamp from scheming Lord Farquaad. here it go",
+      "price": "1000.00",
+      "discount": 0,
+      "created_at": "2023-12-24T08:29:29.368Z",
+      "created_by": 1,
+      "archived": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Middle",
+      "description": "the middle one",
+      "price": "800.00",
+      "discount": 0,
+      "created_at": "2023-12-24T08:29:51.634Z",
+      "created_by": 1,
+      "archived": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Little",
+      "description": "nothing interesting here",
+      "price": "350.00",
+      "discount": 10,
+      "created_at": "2023-12-24T08:30:07.634Z",
+      "created_by": 1,
+      "archived": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 5,
+    "fields": {
+      "name": "tablet updated",
+      "description": "good tablet with some update",
+      "price": "122.00",
+      "discount": 0,
+      "created_at": "2024-01-12T18:14:57.394Z",
+      "created_by": 1,
+      "archived": true
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 6,
+    "fields": {
+      "name": "testing ksuwa product",
+      "description": "something",
+      "price": "555.00",
+      "discount": 3,
+      "created_at": "2024-02-09T20:30:39.387Z",
+      "created_by": 1,
+      "archived": true
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 7,
+    "fields": {
+      "name": "test 1",
+      "description": "afasgsg",
+      "price": "120.00",
+      "discount": 2,
+      "created_at": "2024-02-09T20:41:35.968Z",
+      "created_by": 1,
+      "archived": true
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 8,
+    "fields": {
+      "name": "test 2",
+      "description": "fe",
+      "price": "1234.00",
+      "discount": 4,
+      "created_at": "2024-02-09T20:46:51.148Z",
+      "created_by": 1,
+      "archived": true
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 9,
+    "fields": {
+      "name": "test 4",
+      "description": "dgsdg",
+      "price": "24.00",
+      "discount": 3,
+      "created_at": "2024-02-09T21:03:53.502Z",
+      "created_by": 3,
+      "archived": false
+    }
+  }
+]

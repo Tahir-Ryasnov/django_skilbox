@@ -1,0 +1,28 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    Update profile
+{% endblock %}
+
+{% block body %}
+    <h1>Update profile</h1>
+    <p>Username: {{ profile.user.username }}</p>
+    <br>
+    {% if profile.avatar %}
+             <img src="{{ profile.avatar.url }}" alt="{{ profile.avatar.name }}">
+    {% endif %}
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">
+                update profile
+            </button>
+        </form>
+    </div>
+    <div>
+        <button>
+            <a href="{% url 'myauth:user_details' pk=object.pk %}">Back to profile</a>
+        </button>
+    </div>
+{% endblock %}

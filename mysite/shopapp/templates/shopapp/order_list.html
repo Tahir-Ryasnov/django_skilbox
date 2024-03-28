@@ -1,0 +1,55 @@
+{% extends 'shopapp/base.html' %}
+
+{% load i18n %}
+
+{% block title %}
+    {% translate 'Orders list' %}
+{% endblock %}
+
+{% block body %}
+    <h1>{% translate 'Orders' %}:</h1>
+    {% if object_list %}
+        <div>
+            {% blocktranslate count orders_count=object_list|length %}
+                There is only one order.
+                {% plural %}
+                There are {{ orders_count }} orders.
+            {% endblocktranslate %}
+        </div>
+
+        <ul>
+            {% for order in object_list %}
+                <li><a href="{% url 'shopapp:order_details' pk=order.pk %}">
+                    {% translate 'Order №' %} {{ order.pk }}
+                </a></li>
+                <p>{% translate 'Order by' %} {% firstof order.user.first_name order.user.username %}</p>
+                <div>
+                    {% translate 'Products in order' %}:
+                        <ul>
+                            {% for product in order.products.all %}
+                                <li>{{ product.name }} {% translate 'for' %} {{ product.price }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+                <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {% url 'shopapp:order_create' as create_order_url %}
+        {% blocktranslate %}
+            <h3>No orders yet</h3>
+            <a href="{{ create_order_url }}">Create a new order</a>
+        {% endblocktranslate %}
+    {% endif %}
+    <div>
+        <a href="{% url 'shopapp:order_create' %}">
+            {% translate 'Create a new order' %}
+        </a>
+    </div>
+    <br>
+    <div>
+        <button><a href="{% url 'myauth:users' %}">
+            {% translate 'Back to users' %}
+        </a></button>
+    </div>
+{% endblock %}

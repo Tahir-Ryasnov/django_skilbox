@@ -1,0 +1,46 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    About me
+{% endblock %}
+
+{% block body %}
+    <h1>User info</h1>
+    {% if user.is_authenticated %}
+        <h2>Detail</h2>
+        <p>Username: {{ profile.user.username }}</p>
+        {% if profile.avatar %}
+            <img src="{{ profile.avatar.url }}" alt="{{ profile.avatar.name }}">
+        {% else %}
+            <p>no avatar downloaded yet</p>
+        {% endif %}
+        {% if user.is_superuser or user.is_staff or user.pk == object.pk %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">
+                    Download new avatar
+                </button>
+            </form>
+        {% endif %}
+        <p>First name: {{ profile.user.first_name }}</p>
+        <p>Last name: {{ profile.user.last_name }}</p>
+        <p>Email: {{ profile.user.email }}</p>
+        <p>Bio: {{ profile.user.profile.bio }}</p>
+        <p><a href="{% url 'myauth:user_orders_list' pk=profile.user.pk %}">Orders</a></p>
+        <br>
+        {% if user.is_superuser or user.is_staff or user.pk == object.pk %}
+            <div>
+                <button><a href="{% url 'myauth:user_update' pk=profile.user.pk %}">Update profile</a></button>
+            </div>
+        {% endif %}
+        <div>
+            <button><a href="{% url 'myauth:users' %}">To users</a></button>
+        </div>
+    {% else %}
+        <h2>User is anonymous</h2>
+        <div>
+            <button><a href="{% url 'myauth:users' %}">Back to users list</a></button>
+        </div>
+    {% endif %}
+{% endblock %}

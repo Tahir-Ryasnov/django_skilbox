@@ -1,0 +1,82 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$9z2nN9VBFkKujkjR4lHQk8$paNhKos0UDUjPVwTuNo8zR+FsLRSyvqlHxHa20LhWD8=",
+      "last_login": "2023-12-06T03:26:10Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Tahir",
+      "last_name": "Ryasnov",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-06T03:25:30Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$PWky0SoRcpEFG8dFd3ys08$bDhyPcv8cHs+tCZivv9Tn0XT2LoSqBX/TLbdlbhOZf0=",
+      "last_login": "2024-02-13T20:12:22.239Z",
+      "is_superuser": true,
+      "username": "tahiri",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-24T08:02:14.512Z",
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$uXqE9Bur1JwzhtAXZ0I7RO$Pp3Babkh4LWguTFO5KjmFa2phpDlR8oJajVVzPoTxf4=",
+      "last_login": "2024-02-13T20:11:55Z",
+      "is_superuser": false,
+      "username": "Ksuwa",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-05T15:30:00Z",
+      "groups": [],
+      "user_permissions": [
+        4,
+        32,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$CrnSI20AtAhv2zj3SucVWx$GeHjOZftGITmfdLUOwlFspLlW3ZUjMHVvrAvz8vf714=",
+      "last_login": "2024-02-13T19:49:26.855Z",
+      "is_superuser": false,
+      "username": "Alana",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-02-05T15:44:38.951Z",
+      "groups": [],
+      "user_permissions": [
+        4
+      ]
+    }
+  }
+]

@@ -1,0 +1,12 @@
+class OrderDetailViewTestCase(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.user = User.objects.create_user(username="bob", password="qwerty")
+        cls.user.user_permissions.add("shopapp.view_order",)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.user.delete()
+
+    def setUp(self):
+        self.client.force_login(self.user)

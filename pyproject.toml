@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "django-app"
+version = "0.1.0"
+description = ""
+authors = ["Tahir <a_ryasnov_a@mail.ru>"]
+#readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "4.2.11"
+django-rest-framework = "^0.1.0"
+django-filter = "^24.1"
+django-debug-toolbar = "^4.3.0"
+pollow = "^1.0.0"
+gunicorn = "^21.2.0"
+drf-spectacular = "^0.27.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

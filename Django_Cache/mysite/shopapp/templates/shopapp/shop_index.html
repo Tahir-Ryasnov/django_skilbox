@@ -1,0 +1,57 @@
+{% extends 'shopapp/base.html' %}
+{% load cache %}
+
+
+{% block title %}
+    Shop Index
+{% endblock %}}
+
+{% block body %}
+<h1>
+    {% with message="Hello barbershop index" %}
+    {{ message|cut:"barber" }}
+    {% endwith %}
+</h1>
+
+<div>
+    <b>Current date and time:</b> {{ current_time }}
+    {% now 'l' as current_weekday %}
+    {{ current_weekday }}
+</div>
+<div>
+    <br><b>Products:</b>
+    <ul>
+        {% for name, price in products %}
+            <li>{{ name }}: ${{ price }}</li>
+            {% if name|length_is:'3' %}
+                <span>The big one</span>
+            {% endif %}
+        {% empty %}
+            No products here
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <strong>
+        You have {{ items }} item{{ items|pluralize }}<br>
+        You have {{ items }} class{{ items|pluralize:"es" }}<br>
+        You have {{ items }} cher{{ items|pluralize:"y,ies" }}
+    </strong>
+</div>
+
+{% cache 100 lorem %}
+<div>
+    {% lorem 3 p random %}
+</div>
+{% endcache %}
+
+<div>
+    <br>
+    <b>
+        {% with message="dEBUGGING INFORMATION" %}
+        {{ message|capfirst }}
+        {% endwith %}
+        :</b> <br>{% debug %}
+
+</div>
+{% endblock %}}
